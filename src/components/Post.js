@@ -19,6 +19,8 @@ import FaArrowDown from 'react-icons/lib/fa/arrow-down'
 import FaComment from 'react-icons/lib/fa/comment'
 
 const Post = props => {
+  let {post} = props
+
   return (
     <Row className="mt-3">
       <Col>
@@ -30,13 +32,13 @@ const Post = props => {
             alt="Card image cap"
           />
           <CardBody>
-            <CardTitle>Post Title | <FaArrowUp /> 1 <FaArrowDown /></CardTitle>
-            <CardSubtitle>Post Author</CardSubtitle>
+            <CardTitle>{post.title}| <FaArrowUp /> 1 <FaArrowDown /></CardTitle>
+            <CardSubtitle>{post.author}</CardSubtitle>
             <CardText>
-              Post Body
+                {post.content}
             </CardText>
               <hr />
-              a few seconds ago | <FaComment /> 2 Comments
+              {post.createdAt}| <FaComment /> 2 Comments
               <Form inline>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                   <Input type="text" name="comment" id="comment-field" placeholder="Enter a comment here" />
